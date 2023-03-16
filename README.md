@@ -1,0 +1,2 @@
+# Akon
+Akon Discord Bot
