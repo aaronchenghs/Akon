@@ -1,13 +1,5 @@
-import discord
-import asyncio
-from discord import FFmpegPCMAudio
-from discord.ext import commands
+from AkonKey import *
 
-keyFile = open("C:\\Users\\asian\\PycharmProjects\\akonKey.txt", 'r')
-AKON_TOKEN = keyFile.readline()
-keyFile.close()
-
-AkonID = 922947088168407040
 sleepTime = 15
 
 def checkAkonPresence(memids):  # Scans for the presence of Akon's ID in a given list
@@ -25,7 +17,7 @@ def getMemids(memids, VC):  # Scans and resets memids
 
 async def playLonely(vc, vocal, channelName):
     print(f"AKON has joined!!! \"{channelName}\"")
-    vocal.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="Lonely.mp3"))
+    vocal.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="./mp3/Lonely.mp3"))
 
 async def standby():
     while True:
@@ -40,6 +32,3 @@ async def disconnectAkon(vocal):
     await vocal.disconnect()  # Disconnect
     vocal.cleanup()
     print("Akon has left")
-
-
-
